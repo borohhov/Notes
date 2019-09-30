@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoteViewActivity">
-    <TextView android:id="@+id/noteViewActivity_tv_title"
+    tools:context=".NoteEditActivity">
+    <EditText android:id="@+id/noteEditActivity_et_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:hint="Title"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView android:id="@+id/noteViewActivity_tv_creationDate"
+    <TextView android:id="@+id/noteEditActivity_et_creationDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Date: 29.09.2019"
-        app:layout_constraintTop_toBottomOf="@id/noteViewActivity_tv_title"/>
+        app:layout_constraintTop_toBottomOf="@id/noteEditActivity_et_title"/>
 
-    <TextView android:id="@+id/noteViewActivity_tv_content"
+    <EditText android:id="@+id/noteEditActivity_et_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="COntent woegwepginwpgn wg gwonevo qiweoi"
-        app:layout_constraintTop_toBottomOf="@id/noteViewActivity_tv_creationDate"/>
+        android:layout_height="300dp"
+        android:hint="COntent woegwepginwpgn wg gwonevo qiweoi"
+        app:layout_constraintTop_toBottomOf="@id/noteEditActivity_et_creationDate"/>
 
 
 
