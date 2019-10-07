@@ -8,7 +8,7 @@
     <EditText android:id="@+id/noteEditActivity_et_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"
+        android:hint="@string/title"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView android:id="@+id/noteEditActivity_et_creationDate"
@@ -22,6 +22,16 @@
         android:layout_height="300dp"
         android:hint="COntent woegwepginwpgn wg gwonevo qiweoi"
         app:layout_constraintTop_toBottomOf="@id/noteEditActivity_et_creationDate"/>
+
+    <ImageButton
+        android:id="@+id/fab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:text="Add Note"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
 
 

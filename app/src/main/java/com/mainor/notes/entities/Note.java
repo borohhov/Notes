@@ -1,6 +1,7 @@
 package com.mainor.notes.entities;
 
-import java.time.LocalDateTime;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,11 +19,11 @@ public class Note {
 
     @Getter
     @Setter
-    LocalDateTime creationDate;
+    DateTime creationDate;
 
     @Getter
     @Setter
-    LocalDateTime updateDate;
+    DateTime updateDate;
 
 
 }
