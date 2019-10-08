@@ -10,10 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mainor.notes.dummy.DummyContent;
-import com.mainor.notes.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import com.mainor.notes.dummy.NotesContent;
+import com.mainor.notes.entities.Note;
 
 /**
  * A fragment representing a list of Items.
@@ -69,7 +67,7 @@ public class NotesFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyNoteRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyNoteRecyclerViewAdapter(NotesContent.ITEMS, mListener));
         }
         return view;
     }
@@ -104,6 +102,6 @@ public class NotesFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Note item);
     }
 }

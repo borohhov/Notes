@@ -1,7 +1,6 @@
 package com.mainor.notes.entities;
 
 import org.joda.time.DateTime;
-import org.joda.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;

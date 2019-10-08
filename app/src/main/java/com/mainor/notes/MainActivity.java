@@ -1,10 +1,10 @@
 package com.mainor.notes;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.mainor.notes.dummy.DummyContent;
+import com.mainor.notes.dummy.NotesContent;
+import com.mainor.notes.entities.Note;
 
 
 public class MainActivity extends AppCompatActivity implements NotesFragment.OnListFragmentInteractionListener {
@@ -13,13 +13,13 @@ public class MainActivity extends AppCompatActivity implements NotesFragment.OnL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportFragmentManager().beginTransaction().add(R.id.mainactivity_notes_list, new NotesFragment()).commit();
-        //Intent intentToNoteEdit = new Intent(this, NoteEditActivity.class);
-        //startActivity(intentToNoteEdit);
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.mainactivity_notes_list, new NotesFragment()).commit();
+
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(Note item) {
 
     }
 }
