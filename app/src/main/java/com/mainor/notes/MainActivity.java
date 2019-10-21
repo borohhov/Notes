@@ -1,9 +1,11 @@
 package com.mainor.notes;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.mainor.notes.dummy.NotesContent;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
 import com.mainor.notes.entities.Note;
 
 
@@ -15,7 +17,12 @@ public class MainActivity extends AppCompatActivity implements NotesFragment.OnL
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.mainactivity_notes_list, new NotesFragment()).commit();
-
+        findViewById(R.id.mainactivity_btn_new_note).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(view.getContext(),NoteEditActivity.class));
+            }
+        });
     }
 
     @Override

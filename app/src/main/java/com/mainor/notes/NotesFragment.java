@@ -2,16 +2,24 @@ package com.mainor.notes;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+//import com.mainor.notes.dummy.NotesContent;
 import com.mainor.notes.dummy.NotesContent;
 import com.mainor.notes.entities.Note;
+import com.mainor.notes.persistence.AppDatabase;
+//import com.mainor.notes.persistence.NotePersistence;
+
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -60,15 +68,34 @@ public class NotesFragment extends Fragment {
 
         // Set the adapter
         if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            final Context context = view.getContext();
+            final RecyclerView recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
+            AppDatabase db = Room.databaseBuilder(context.getApplicationContext(),
+                    AppDatabase.class, "database-name").build();
+            NotesContent notes = new NotesContent();
             recyclerView.setAdapter(new MyNoteRecyclerViewAdapter(NotesContent.ITEMS, mListener));
+/*
+            Runnable target = new Runnable() {
+                @Override
+                public void run() {
+                    List<Note> notes = NotePersistence.getDb(context.getApplicationContext()).noteDao().getAll();
+                    recyclerView.setAdapter(new MyNoteRecyclerViewAdapter(notes, mListener));
+                }
+            };
+            Thread thread = new Thread(target);
+            thread.start();
+            */
+
+
+
         }
+
+
         return view;
     }
 

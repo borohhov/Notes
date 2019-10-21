@@ -46,7 +46,7 @@ public class NotesContent {
     private static Note createNote(int position) {
         Note note = new Note();
         note.setTitle("Title");
-        note.setCreationDate(DateTime.now());
+        note.setCreationDate(DateTime.now().getMillis());
         note.setContent("Test Content " + position);
         return note;
     }
