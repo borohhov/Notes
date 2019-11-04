@@ -18,12 +18,12 @@ public interface NoteDao {
     @Query("Select * FROM note WHERE id=(:noteId)")
     public Note selectNote(int noteId);
 
-    //@Update
-    //public void updateNote(int id);
+    @Update
+    public void updateNote(Note note);
 
     @Insert
     public void insert(Note note);
 
-    //@Delete
-    //public void deleteNote(int id);
+    @Delete
+    public void deleteNote(Note note);
 }

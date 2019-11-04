@@ -78,7 +78,11 @@ public class NotesFragment extends Fragment {
             AppDatabase db = Room.databaseBuilder(context.getApplicationContext(),
                     AppDatabase.class, "database-name").build();
             NotesContent notes = new NotesContent();
-            recyclerView.setAdapter(new MyNoteRecyclerViewAdapter(NotesContent.ITEMS, mListener));
+
+            AppDatabase db = AppDatabase.Builder()
+
+
+            //recyclerView.setAdapter(new MyNoteRecyclerViewAdapter(NotesContent.ITEMS, mListener));
 /*
             Runnable target = new Runnable() {
                 @Override
